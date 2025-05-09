@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 19:14:32 by jose-gon          #+#    #+#             */
+/*   Created: 2025/05/05 17:55:36 by jose-gon          #+#    #+#             */
 /*   Updated: 2025/05/07 17:33:55 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Dog.hpp>
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog Constructor called" << std::endl;
-	_type = "Dog";
-}
+#include <WrongAnimal.hpp>
 
-Dog::Dog(const Dog& source)
+class wrongCat : public wrongAnimal
 {
-	std::cout << "Dog Constructor Copy called" << std::endl;
-	_type = source._type;
-}
+	public:
+		wrongCat();
+		wrongCat(const wrongCat& source);
+		wrongCat &operator=(const wrongCat& source);
+		~wrongCat();
+		void	makeSound() const;
+};
 
-Dog& Dog::operator=(const Dog& source)
-{
-	std::cout << "Dog Constructor Copy called" << std::endl;
-	_type = source._type;
-	return (*this);
-}
-
-Dog::~Dog()
-{
-	std::cout << "Dog Destructor called" << std::endl;
-}
-
-void	Dog::makeSound() const
-{
-	std::cout << _type << " says: WOF WOF WOF!!" << std::endl;
-}
+#endif

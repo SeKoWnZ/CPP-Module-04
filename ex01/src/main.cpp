@@ -6,7 +6,7 @@
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 20:29:46 by jose-gon          #+#    #+#             */
-/*   Updated: 2025/05/06 13:46:36 by jose-gon         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:48:53 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,24 @@
 
 int main()
 {
-	const Animal meta;
-	const Dog j;
-	const Cat i;
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 	
-	std::cout << "I'm a " << j.getType() << std::endl;
-	std::cout << "I'm a " << i.getType() << std::endl;
-	meta.makeSound();
-	i.makeSound();
-	j.makeSound();
+	delete j;
+	delete i;
 	
-	std::cout << std::endl << "---------- BAD ONES ----------" << std::endl << std::endl;
-	
-	const wrongAnimal wrong;
-	const wrongCat h;
-	std::cout << "I'm a poor " << wrong.getType() << std::endl;
-	std::cout << "I'm a poor " << h.getType() << std::endl;
-	wrong.makeSound();
-	h.makeSound();
+	Animal* catsAndDogs[100];
+	for (int i = 0; i < 50; i++) {
+		std::cout << "\n" << i + 1 << std::endl;
+		catsAndDogs[i] = new Dog();
+	}
+	for (int i = 50; i < 100; i++) {
+		std::cout << "\n" << i + 1 << std::endl;
+		catsAndDogs[i] = new Cat();
+	}
 
-	std::cout << std::endl << "---------- ARMAGEDDON ----------" << std::endl << std::endl;
+	for (int i = 0; i < 100; i++) {
+		delete catsAndDogs[i];
+	}
+	return (0);
 }

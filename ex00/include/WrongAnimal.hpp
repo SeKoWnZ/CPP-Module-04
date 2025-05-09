@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 19:14:32 by jose-gon          #+#    #+#             */
+/*   Created: 2025/05/05 17:53:43 by jose-gon          #+#    #+#             */
 /*   Updated: 2025/05/07 17:33:55 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Dog.hpp>
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
-Dog::Dog()
-{
-	std::cout << "Dog Constructor called" << std::endl;
-	_type = "Dog";
-}
+#include <iostream>
 
-Dog::Dog(const Dog& source)
+class wrongAnimal
 {
-	std::cout << "Dog Constructor Copy called" << std::endl;
-	_type = source._type;
-}
-
-Dog& Dog::operator=(const Dog& source)
-{
-	std::cout << "Dog Constructor Copy called" << std::endl;
-	_type = source._type;
-	return (*this);
-}
-
-Dog::~Dog()
-{
-	std::cout << "Dog Destructor called" << std::endl;
-}
-
-void	Dog::makeSound() const
-{
-	std::cout << _type << " says: WOF WOF WOF!!" << std::endl;
-}
+	protected:
+		std::string _type;
+	public:
+		wrongAnimal();
+		wrongAnimal(const wrongAnimal &source);
+		wrongAnimal &operator=(const wrongAnimal &source);
+		~wrongAnimal();
+		void makeSound() const;
+		std::string getType() const;
+};
+ 
+#endif

@@ -6,7 +6,7 @@
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 13:40:41 by jose-gon          #+#    #+#             */
-/*   Updated: 2025/04/30 19:17:16 by jose-gon         ###   ########.fr       */
+/*   Updated: 2025/05/07 17:33:55 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ class Dog : public Animal
 {
 	public:
 		Dog();
-		Dog(const Dog& other);
-		Dog &operator=(const Dog& other);
+		Dog(const Dog& source);
+		Dog &operator=(const Dog& source);
 		~Dog();
 		void	makeSound() const;
 };

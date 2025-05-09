@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/29 20:27:42 by jose-gon          #+#    #+#              #
-#    Updated: 2025/05/05 18:02:41 by jose-gon         ###   ########.fr        #
+#    Created: 2025/05/05 18:21:21 by jose-gon          #+#    #+#              #
+#    Updated: 2025/05/08 19:51:13 by jose-gon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 INC_DIR = ./include
 
-FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+FILES = main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp WrongAnimal.cpp WrongCat.cpp
 OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(FILES:.cpp=.o))
 
 all : $(NAME)

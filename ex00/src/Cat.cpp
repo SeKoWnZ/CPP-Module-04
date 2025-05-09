@@ -6,7 +6,7 @@
 /*   By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 19:14:32 by jose-gon          #+#    #+#             */
-/*   Updated: 2025/04/30 19:30:10 by jose-gon         ###   ########.fr       */
+/*   Updated: 2025/05/07 17:33:55 by jose-gon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ Cat::Cat(const Cat& source)
 	_type = source._type;
 }
 
-Cat& Cat::operator=(const Cat& other)
+Cat& Cat::operator=(const Cat& source)
 {
 	std::cout << "Cat Constructor Copy called" << std::endl;
-	_type = other._type;
+	_type = source._type;
 	return (*this);
 }
 
