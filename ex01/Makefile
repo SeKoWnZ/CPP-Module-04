@@ -6,7 +6,7 @@
 #    By: jose-gon <jose-gon@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 18:21:21 by jose-gon          #+#    #+#              #
-#    Updated: 2025/05/08 19:51:13 by jose-gon         ###   ########.fr        #
+#    Updated: 2025/06/25 19:05:42 by jose-gon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ OBJ_FILES = $(addprefix $(OBJ_DIR)/, $(FILES:.cpp=.o))
 all : $(NAME)
 
 $(NAME): $(OBJ_FILES)
-	clang++ $(CFLAGS) -o $@ $^
+	c++ $(CFLAGS) -o $@ $^
 	
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
-	clang++ $(CFLAGS) -I$(INC_DIR) -c $< -o $@
+	c++ $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
